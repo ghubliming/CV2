@@ -10,7 +10,7 @@
 
 **No, this statement is incorrect.**
 
-The relationship between singular values and eigenvalues is more nuanced:
+The relationship between singular values and eigenvalues is more nuanced细微差别:
 
 - **Singular values** $\sigma_i$ of matrix $A$ are the positive square roots of the eigenvalues of $A^T A$ (or equivalently, $AA^T$)
 - **Eigenvalues** $\lambda_i$ of matrix $A$ are the solutions to $\det(A - \lambda I) = 0$
@@ -33,6 +33,8 @@ $$A = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}$$
 
 ### Question 1: Singular Values of Symmetric Matrices
 
+[[Equal Singular and Eigen Values (SS25-CV2-exam-ss24 retake)]]
+
 **If $A$ is symmetric, what can you say about the singular values of $A$ knowing the eigenvalues of $A$?**
 
 For a symmetric matrix $A$:
@@ -48,6 +50,8 @@ $$\text{Singular values} = \{|\lambda_1|, |\lambda_2|, \ldots, |\lambda_n|\}$$
 where $\lambda_i$ are the eigenvalues of $A$.
 
 ### Question 2: Singular Values of Positive Semi-definite Matrices
+
+[[Equal Singular and Eigen Values (SS25-CV2-exam-ss24 retake)]]
 
 **If $A$ is positive semi-definite, what can you say about the singular values of $A$ knowing the eigenvalues of $A$?**
 

@@ -1,35 +1,133 @@
-To find the inverse distortion function $f(r_d)$ such that $x = f(r_d) x_d$, where $x_d = g(r) x$ and $g(r) = \frac{k}{r} \arctan\left(\frac{r}{k}\right)$ with $r = |x|$ and $r_d = |x_d|$, we need to express $x$ in terms of $x_d$.
+# Inverse Distortion Function Derivation
 
-Given:
-- $x_d = g(r) x$
-- $g(r) = \frac{k}{r} \arctan\left(\frac{r}{k}\right)$
-- $r = |x|$, $r_d = |x_d|$
+This document explains the derivation of an inverse distortion function `f(r_d)` from a given radial distortion function `g(r)`.
 
-First, the relationship between $r$ and $r_d$ comes from the magnitude of the vectors:
-$$r_d = |x_d| = |g(r) x| = g(r) |x| = g(r) r$$
-since $g(r)$ is a scalar and $|x| = r$. Substituting $g(r)$:
-$$r_d = \left( \frac{k}{r} \arctan\left(\frac{r}{k}\right) \right) r = k \arctan\left(\frac{r}{k}\right)$$
+## 1. Problem Definition
 
-Now, we need to solve for $r$ in terms of $r_d$:
-$$r_d = k \arctan\left(\frac{r}{k}\right)$$
-Let $\theta = \frac{r}{k}$, so $r = k \theta$ and $\arctan(\theta) = \frac{r_d}{k}$:
-$$\theta = \tan\left(\frac{r_d}{k}\right)$$
-$$r = k \tan\left(\frac{r_d}{k}\right)$$
+We are given a radial distortion model where an original point `x` is mapped to a distorted point `x_d`. The goal is to find the inverse mapping that takes `x_d` back to `x`.
 
-The inverse function $f(r_d)$ should undo the distortion, so the magnitude relationship suggests:
-$$|x| = f(r_d) |x_d|$$
-Since $r = |x|$ and $r_d = |x_d|$, and the distortion scales the vector $x$ by $g(r)$, the inverse scaling factor $f(r_d)$ should be the reciprocal of $g(r)$ evaluated at the original $r$, but expressed in terms of $r_d$. Given $r = k \tan\left(\frac{r_d}{k}\right)$, we substitute into $g(r)$:
-$$g(r) = \frac{k}{r} \arctan\left(\frac{r}{k}\right)$$
-However, we need $f(r_d)$ such that $x = f(r_d) x_d$. Since $x_d = g(r) x$, the inverse is:
-$$x = \frac{1}{g(r)} x_d$$
-We need $g(r)$ in terms of $r_d$. From $r_d = k \arctan\left(\frac{r}{k}\right)$, we have $\frac{r}{k} = \tan\left(\frac{r_d}{k}\right)$, so:
-$$\arctan\left(\frac{r}{k}\right) = \frac{r_d}{k}$$
-$$g(r) = \frac{k}{r} \cdot \frac{r_d}{k} = \frac{r_d}{r}$$
-But $r = k \tan\left(\frac{r_d}{k}\right)$, so:
-$$g(r) = \frac{r_d}{k \tan\left(\frac{r_d}{k}\right)}$$
+### Given Information:
 
-Thus, the inverse function is:
-$$f(r_d) = \frac{1}{g(r)} = \frac{k \tan\left(\frac{r_d}{k}\right)}{r_d}$$
+- **Distortion Equation:**  
+  $$
+  x_d = g(r) x
+  $$
+- **Distortion Function:**  
+  $$
+  g(r) = \frac{k}{r} \arctan\left(\frac{r}{k}\right)
+  $$
+- **Inverse Distortion Equation:**  
+  $$
+  x = f(r_d) x_d
+  $$
+- **Vector Magnitudes:** $r = |x|$ and $r_d = |x_d|$
 
-So, the inverse distortion function is:
-$$f(r_d) = \frac{k \tan\left(\frac{r_d}{k}\right)}{r_d}$$
+Our objective is to find the analytical expression for the inverse function `f(r_d)`.
+
+## 2. Derivation Steps
+
+The derivation proceeds in three logical steps:
+
+1. Establish a relationship between the original magnitude $r$ and the distorted magnitude $r_d$.
+2. Solve for the original magnitude $r$ in terms of the distorted magnitude $r_d$.
+3. Use this relationship to find the inverse function $f(r_d)$.
+
+---
+
+### Step 1: Relate $r$ and $r_d$
+
+We can find the relationship between the magnitudes by taking the magnitude of the distortion equation. Since $g(r)$ is a scalar, we have:
+
+$$
+r_d = |x_d| = |g(r) x| = g(r) |x| = g(r) r
+$$
+
+Now, substitute the definition of $g(r)$ into this equation:
+
+$$
+r_d = \left( \frac{k}{r} \arctan\left(\frac{r}{k}\right) \right) r
+$$
+
+The $r$ terms cancel out, leaving a direct relationship:
+
+$$
+r_d = k \arctan\left(\frac{r}{k}\right)
+$$
+
+---
+
+### Step 2: Solve for $r$
+
+From the equation:
+
+$$
+\frac{r_d}{k} = \arctan\left(\frac{r}{k}\right)
+$$
+
+Apply the tangent function to both sides:
+
+$$
+\tan\left(\frac{r_d}{k}\right) = \frac{r}{k}
+$$
+
+Multiply by $k$:
+
+$$
+r = k \tan\left(\frac{r_d}{k}\right)
+$$
+
+---
+
+### Step 3: Determine the Inverse Function $f(r_d)$
+
+From the problem setup:
+
+1. $x_d = g(r) x$
+2. $x = f(r_d) x_d$
+
+From (1), express $x$:
+
+$$
+x = \frac{1}{g(r)} x_d
+$$
+
+Comparing with (2), it follows:
+
+$$
+f(r_d) = \frac{1}{g(r)}
+$$
+
+Use the definition:
+
+$$
+g(r) = \frac{k}{r} \arctan\left(\frac{r}{k}\right)
+$$
+
+From Step 1:  
+$\arctan\left(\frac{r}{k}\right) = \frac{r_d}{k}$
+
+Substitute:
+
+$$
+g(r) = \frac{k}{r} \cdot \frac{r_d}{k} = \frac{r_d}{r}
+$$
+
+Substitute $r = k \tan\left(\frac{r_d}{k}\right)$:
+
+$$
+g(r) = \frac{r_d}{k \tan\left(\frac{r_d}{k}\right)}
+$$
+
+So:
+
+$$
+f(r_d) = \frac{1}{g(r)} = \frac{k \tan\left(\frac{r_d}{k}\right)}{r_d}
+$$
+
+## 3. Final Result
+
+The inverse distortion function is:
+
+$$
+f(r_d) = \frac{k \tan\left(\frac{r_d}{k}\right)}{r_d}
+$$

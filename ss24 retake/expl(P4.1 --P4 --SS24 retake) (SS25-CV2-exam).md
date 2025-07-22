@@ -1,4 +1,4 @@
-xLooking at the aperture problem statement you've provided, I can see there are some issues with the options given. Let me clarify what the aperture problem actually is and evaluate these statements:
+Looking at the aperture problem statement you've provided, I can see there are some issues with the options given. Let me clarify what the aperture problem actually is and evaluate these statements:
 
 The **aperture problem** is a fundamental limitation in motion estimation from image sequences. It occurs when trying to determine the motion of a visual pattern through a small aperture (or locally within an image).
 

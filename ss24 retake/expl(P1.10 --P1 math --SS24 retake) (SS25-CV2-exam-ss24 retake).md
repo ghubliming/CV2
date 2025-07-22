@@ -11,7 +11,7 @@ Show that for a matrix $A \in \mathbb{R}^{n \times n}$ and invertible matrix $P 
 - We have $A = PBP^{-1}$
 
 ## Proof
-
+	
 We need to show two things:
 1. $Pw$ is an eigenvector of $A$ for all eigenvectors $w$ of $B$
 2. $P^{-1}v$ is an eigenvector of $B$ for all eigenvectors $v$ of $A$

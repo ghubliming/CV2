@@ -1,4 +1,5 @@
 I’ll explain in detail how we calculate the dimensions of the Lie algebras $\mathfrak{so}(2)$ and $\mathfrak{se}(2)$, step by step, in a way that’s easy to follow. Since you asked for a detailed explanation, I’ll break it down thoroughly, including the math and intuition behind it. Let’s dive in!
+[[dim of lie algebra & DoF (expl (P1.5--P1 math --SS24 retake)) (SS25-CV2-exam-ss24 retake)]]
 
 ---
 
